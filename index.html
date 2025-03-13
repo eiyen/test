@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图像压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图像压缩工具</h1>
+        
+        <div class="upload-section">
+            <label for="upload" class="upload-label">
+                <span>选择图片</span>
+                <input type="file" id="upload" accept="image/*">
+            </label>
+            
+            <div class="options">
+                <div class="option">
+                    <label for="quality">压缩质量:</label>
+                    <input type="range" id="quality" min="30" max="100" value="75">
+                    <span id="quality-value">75%</span>
+                </div>
+                <div class="option">
+                    <label for="max-width">最大宽度:</label>
+                    <input type="number" id="max-width" value="1920" min="100" max="4000">
+                </div>
+            </div>
+            
+            <button id="compress-btn" disabled>压缩图片</button>
+        </div>
+        
+        <div class="preview-section">
+            <div class="preview-container">
+                <div class="preview original">
+                    <h3>原图</h3>
+                    <div class="image-container">
+                        <img id="original-preview">
+                    </div>
+                    <div class="info" id="original-info"></div>
+                </div>
+                
+                <div class="preview compressed">
+                    <h3>压缩后</h3>
+                    <div class="image-container">
+                        <img id="compressed-preview">
+                    </div>
+                    <div class="info" id="compressed-info"></div>
+                    <button id="download-btn" disabled>下载压缩图片</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.0/dist/browser-image-compression.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
